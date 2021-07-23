@@ -9,7 +9,6 @@ import java.util.Optional;
 public class ProductDB {
     private List<Product> productList = new ArrayList<>();
 
-
     public ProductDB(List<Product> productList) {
         this.productList = productList;
     }
@@ -17,13 +16,14 @@ public class ProductDB {
     public List<Product> list() {
         return productList;
     }
-    public Product get(int id){
+
+    public Product get(int id) {
         Product finalProduct = new Product(1, "b");
-        for(Product product:productList){
-            if (product.getId() == id){
+        for (Product product : productList) {
+            if (product.getId() == id) {
                 finalProduct = product;
             }
         }
-      return finalProduct;
+        return finalProduct;
     }
 }

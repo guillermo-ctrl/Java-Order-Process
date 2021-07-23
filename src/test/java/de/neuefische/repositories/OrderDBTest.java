@@ -13,28 +13,51 @@ class OrderDBTest {
     @Test
     public void orderDBlist() {
         //GIVEN
-        Product product1 = new Product(1, "bier");
+        Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
-        productList.add(product1);
-        Order order = new Order(1, productList);
-        OrderDB orderDB = new OrderDB(order);
-         //WHEN
-        OrderDB actual = orderDB.list();
+        productList.add(product);
+        Order order1 = new Order(1,productList);
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(order1);
+
+        OrderDB orderDB = new OrderDB(orderList);
+        //WHEN
+        List<Order> actual = orderDB.list();
         // THEN
-        assertEquals();
+        assertEquals(orderList, actual);
     }
 
     @Test
     public void orderDBadd() {
         //GIVEN
+        Product product = new Product(1, "bier");
+        List<Product> productList = new ArrayList<>();
+        productList.add(product);
+        Order order1 = new Order(1,productList);
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(order1);
+
+        OrderDB orderDB = new OrderDB(orderList);
         //WHEN
+        int actual = orderList.size();
         //THEN
+        int expected = 1;
+        assertEquals(expected, actual);
     }
 
     @Test
     public void orderDBget() {
         //GIVEN
+        Product product = new Product(1, "bier");
+        List<Product> productList = new ArrayList<>();
+        productList.add(product);
+        Order order1 = new Order(1,productList);
+        List<Order> orderList = new ArrayList<>();
+        orderList.add(order1);
         //WHEN
+        OrderDB orderDB = new OrderDB(orderList);
+        Order actual = orderDB.get(1);
         //THEN
+        assertEquals(order1, actual);
     }
 }

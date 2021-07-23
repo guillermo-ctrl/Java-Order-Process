@@ -11,22 +11,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ProductDBTest {
     @Test
-    public void productDBget(){
+    public void productDBget() {
         // GIVEN
         Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
         productList.add(product);
-        ProductDB productDB =  new ProductDB(productList);
+        ProductDB productDB = new ProductDB(productList);
         // WHEN
         Product expected = productDB.get(1);
         // THEN
-        assertEquals(product,expected);
+        assertEquals(product, expected);
 
     }
+
     @Test
-    public void productDBlist(){
+    public void productDBlist() {
         // GIVEN
-        Product product = new Product(1,"bier");
+        Product product = new Product(1, "bier");
         Product product1 = new Product(2, "keks");
         List<Product> productList = new ArrayList<>();
 
