@@ -9,13 +9,10 @@ import java.util.List;
 public class OrderDB {
     private List<Order> orderList = new ArrayList<>();
 
-    public OrderDB(List<Order> orderList) {
-        this.orderList = orderList;
-    }
-
     public List<Order> list(){
         return orderList;
     }
+
     public Order get(int id) {
         Product  product = new Product(1, "p");
         List<Product> productList = new ArrayList<>();
@@ -27,5 +24,9 @@ public class OrderDB {
             }
         }
         return finalOrder;
+    }
+
+    public void add(Order order){
+        orderList.add(order);
     }
 }

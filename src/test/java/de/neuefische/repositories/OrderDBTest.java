@@ -20,7 +20,8 @@ class OrderDBTest {
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
 
-        OrderDB orderDB = new OrderDB(orderList);
+        OrderDB orderDB = new OrderDB();
+        orderDB.add(order1);
         //WHEN
         List<Order> actual = orderDB.list();
         // THEN
@@ -37,7 +38,8 @@ class OrderDBTest {
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
 
-        OrderDB orderDB = new OrderDB(orderList);
+        OrderDB orderDB = new OrderDB();
+        orderDB.add(order1);
         //WHEN
         int actual = orderList.size();
         //THEN
@@ -55,7 +57,8 @@ class OrderDBTest {
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
         //WHEN
-        OrderDB orderDB = new OrderDB(orderList);
+        OrderDB orderDB = new OrderDB();
+        orderDB.add(order1);
         Order actual = orderDB.get(1);
         //THEN
         assertEquals(order1, actual);

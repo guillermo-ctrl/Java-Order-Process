@@ -13,28 +13,43 @@ import static org.junit.jupiter.api.Assertions.*;
 class OrderServiceTest {
 
     @Test
-    public void addOrder() {
-        // GIVEN
-
-        // WHEN
-        // THEN
-
-    }
-
-    @Test
-    public void listOrders() {
+    public void checkingAddOrder() {
         // GIVEN
         Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
         productList.add(product);
-        Order order = new Order(1, productList);
+        Order order1 = new Order(1,productList);
         List<Order> orderList = new ArrayList<>();
-        orderList.add(order);
-        OrderDB orderDB = new OrderDB(orderList);
+        orderList.add(order1);
+
+        OrderService orderService = new OrderService();
+        orderService.addOrder(order1);
+        //OrderDB orderDB = new OrderDB(orderList);
+        int expected = orderList.size();
         // WHEN
-        List <Order> actual = OrderService.listOrders();
+        int actual = orderService.listOrders().size();
         // THEN
-        assertEquals(orderList, actual);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void checkingListOrders() {
+        // GIVEN
+        Product product = new Product(1, "bier");
+        List<Product> productList = new ArrayList<>();
+        productList.add(product);
+        Order order1 = new Order(1,productList);
+        List<Order> expected = new ArrayList<>();
+        expected.add(order1);
+
+        OrderService orderService = new OrderService();
+        orderService.addOrder(order1);
+
+
+        // WHEN
+        List <Order> actual = orderService.listOrders();
+        // THEN
+        assertEquals(expected , actual);
     }
 
 }
