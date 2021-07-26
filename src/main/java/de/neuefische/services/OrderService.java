@@ -16,9 +16,11 @@ public class OrderService {
 
     public void addOrder(Order order) {
         //Exception for empty, illegal argument exception, look at 21
-        orderDB.add(order);
+        try {
+            orderDB.add(order);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Argument hast to be an order." + e);
+        }
     }
     //prüfen ob Produkte drinnen sind, falls nicht /illegal Argument exception
-
-
 }

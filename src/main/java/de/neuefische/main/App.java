@@ -18,6 +18,6 @@ public class App {
         Order order1 = new Order(1, productList);
         OrderService orderService = new OrderService();
         orderService.addOrder(order1);
-        System.out.println("OrderList: "+ orderService.listOrders());
+        System.out.println("OrderList: " + orderService.listOrders());
     }
 }

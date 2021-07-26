@@ -16,7 +16,7 @@ class OrderDBTest {
         Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
         productList.add(product);
-        Order order1 = new Order(1,productList);
+        Order order1 = new Order(1, productList);
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
 
@@ -34,7 +34,7 @@ class OrderDBTest {
         Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
         productList.add(product);
-        Order order1 = new Order(1,productList);
+        Order order1 = new Order(1, productList);
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
 
@@ -53,7 +53,7 @@ class OrderDBTest {
         Product product = new Product(1, "bier");
         List<Product> productList = new ArrayList<>();
         productList.add(product);
-        Order order1 = new Order(1,productList);
+        Order order1 = new Order(1, productList);
         List<Order> orderList = new ArrayList<>();
         orderList.add(order1);
         //WHEN
